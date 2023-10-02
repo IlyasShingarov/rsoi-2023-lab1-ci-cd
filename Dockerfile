@@ -16,4 +16,4 @@ ARG DB_PASSWORD
 ENV DB_PASSWORD=$DB_PASSWORD
 ARG PORT
 COPY --from=build ${JAR_FILE} app.jar
-ENTRYPOINT ["java", "-jar", "-Dserver.port=${PORT}","/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "-Dserver.port=$PORT","/app/app.jar"]
