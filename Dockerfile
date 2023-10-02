@@ -9,4 +9,4 @@ RUN mkdir /app
 WORKDIR app
 ARG JAR_FILE=/home/gradle/src/build/libs/person-service-0.0.1.jar
 COPY --from=build ${JAR_FILE} app.jar
-ENTRYPOINT ["java", "-jar", "-Dserver.port=$PORT","/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "-Dserver.port=${PORT}","/app/app.jar"]
